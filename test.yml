@@ -1,0 +1,14 @@
+- name: test raw module
+  hosts: win
+  tasks:
+    - name: run ipconfig
+      win_command: ipconfig
+      register: ipconfig
+    - debug: var=ipconfig
+
+#- hosts: win
+#  tasks:
+#    - name: Remove Appx packages (and their hindering file assocations)
+#      win_shell: |
+#        Get-AppxPackage -name "Microsoft.ZuneMusic" | Remove-AppxPackage
+#        Get-AppxPackage -name "Microsoft.ZuneVideo" | Remove-AppxPackage
